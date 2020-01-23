@@ -1,24 +1,9 @@
 const config = require('./config');
-const { WebClient, IncomingWebhook } = require('@slack/client');
+const { IncomingWebhook } = require('@slack/client');
 
 let webhook;
 if (config.webhookUrl) {
   webhook = new IncomingWebhook(config.webhookUrl);
-}
-let web;
-if (config.accessToken) {
-  web = new WebClient(config.accessToken);
-}
-
-async function postChannelMessage(channel, text, attachments) {
-  if (!web) {
-    throw new Error('A Slack access token was not provided when the bot was started.');
-  }
-  return web.chat.postMessage({
-    channel,
-    text,
-    attachments
-  });
 }
 
 async function postWebhookMessage(message) {
@@ -37,6 +22,5 @@ async function postWebhookMessage(message) {
 }
 
 module.exports = {
-  postChannelMessage,
   postWebhookMessage
 };
