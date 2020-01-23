@@ -1,0 +1,15 @@
+{
+  "name": "bsi-bot",
+  "version": "1.0.0",
+  "author": "D2L Inc",
+  "license": "UNLICENSED",
+  "contributors": [
+    "Josh Roach <josh.roach@D2L.com>"
+  ],
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {
+    "@slack/client": "^4.8.0",
+    "@slack/events-api": "^2.1.1"
+  }
+}
