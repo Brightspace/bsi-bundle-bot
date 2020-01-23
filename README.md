@@ -1,4 +1,4 @@
-A bot for posting BSI info to Slack
+A bot for posting BSI info to Slack.
 
 ## Environment Variable Setup
 
@@ -12,4 +12,4 @@ SLACK_WEBHOOK_URL=<url>
 
 ## Running
 
-`node src/main.js`
+`npm run main`

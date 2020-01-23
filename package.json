@@ -6,7 +6,9 @@
   "contributors": [
     "Josh Roach <josh.roach@D2L.com>"
   ],
-  "scripts": {},
+  "scripts": {
+    "main": "node src/main.js"
+  },
   "devDependencies": {},
   "dependencies": {
     "@slack/client": "^4.8.0",
