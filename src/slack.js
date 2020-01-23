@@ -1,15 +1,13 @@
+const config = require('./config');
 const { WebClient, IncomingWebhook } = require('@slack/client');
 
-const WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
-const ACCESS_TOKEN = process.env.SLACK_ACCESS_TOKEN;
-
 let webhook;
-if (WEBHOOK_URL) {
-  webhook = new IncomingWebhook(WEBHOOK_URL);
+if (config.webhookUrl) {
+  webhook = new IncomingWebhook(config.webhookUrl);
 }
 let web;
-if (ACCESS_TOKEN) {
-  web = new WebClient(ACCESS_TOKEN);
+if (config.accessToken) {
+  web = new WebClient(config.accessToken);
 }
 
 async function postChannelMessage(channel, text, attachments) {
