@@ -1,11 +1,7 @@
 const { WebClient, IncomingWebhook } = require('@slack/client');
 
 const WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
-const ACCESS_TOKEN = process.env.SLACK_OAUTH_ACCESS_TOKEN;
-
-const AUTHORIZATION_HEADER = {
-  Authorization: `Bearer ${ACCESS_TOKEN}`
-};
+const ACCESS_TOKEN = process.env.SLACK_ACCESS_TOKEN;
 
 let webhook;
 if (WEBHOOK_URL) {

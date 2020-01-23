@@ -2,6 +2,10 @@ const slack = require('./slack');
 
 module.exports.run = async () => {
     try {
+        await slack.postChannelMessage(
+            process.env.CHANNEL_ID,
+            'BSI bot test'
+        );
 
       return { statusCode: 200 };
     } catch (err) {
