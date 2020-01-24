@@ -1,4 +1,4 @@
-function formatBlock(
+function formatLkgBlock(
     bsiVersionUrl,
     bsiVersionNumber,
     quadSiteUrl,
@@ -36,6 +36,6 @@ function formatBundleAndBsiText(
 }
 
 module.exports = {
-    formatBlock,
+    formatLkgBlock,
     formatBundleAndBsiText
 };
