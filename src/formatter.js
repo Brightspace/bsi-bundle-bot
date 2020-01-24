@@ -1,16 +1,15 @@
-
-function formatMessage(
+function formatBlock(
     bsiVersionUrl,
     bsiVersionNumber,
     quadSiteUrl,
     bundleNumber
 ) {
-    const sectionText = 
-        `BSI was updated to version: <${bsiVersionUrl}|${bsiVersionNumber}>\n` +
-        `Quad site: <${quadSiteUrl}|${bundleNumber}>\n\n`
-        `Previous bundles in thread.`;
+    const sectionText =
+        `A new LKG site was deployed:\n` +
+        `${formatBundleAndBsiText(bsiVersionUrl, bsiVersionNumber, quadSiteUrl, bundleNumber)}\n\n` +
+        `Previous bundles in thread:`;
 
-    let blocks = [
+    const block = [
         {
             "type": "section",
             "text": {
@@ -20,11 +19,23 @@ function formatMessage(
         }
     ];
 
-    return blocks;
+    return block;
 }
 
-function getBundleAndBsiText()
+function formatBundleAndBsiText(
+    bsiVersionUrl,
+    bsiVersionNumber,
+    quadSiteUrl,
+    bundleNumber
+) {
+    const text =
+        `BSI version: <${bsiVersionUrl}|${bsiVersionNumber}>\n` +
+        `Quad site: <${quadSiteUrl}|${bundleNumber}>`;
+
+    return text;
+}
 
 module.exports = {
-    formatMessage
+    formatBlock,
+    formatBundleAndBsiText
 };
