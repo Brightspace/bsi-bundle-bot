@@ -10,15 +10,19 @@ if (config.accessToken) {
   web = new WebClient(config.accessToken);
 }
 
-async function postChannelMessage(channel, text, attachments) {
+async function postChannelMessage(channel, blocks) {
   if (!web) {
     throw new Error('A Slack access token was not provided when the bot was started.');
   }
-  return web.chat.postMessage({
+  const text = 'fallback';
+
+  const promise = web.chat.postMessage({
     channel,
     text,
-    attachments
+    blocks
   });
+
+  return promise;
 }
 
 async function postWebhookMessage(message) {
